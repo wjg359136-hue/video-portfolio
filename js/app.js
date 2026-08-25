@@ -21,14 +21,20 @@
     marquee: document.getElementById('marquee')
   };
 
+  // Lazy-load first-frame covers only when cards scroll into view.
+  var coverObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var card = entry.target;
+            if (card._loadCover) { card._loadCover(); }
+          }
+        });
+      }, { rootMargin: '200px' })
+    : null;
+
   function buildIcon() {
     return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
-  }
-
-  function esc(s) {
-    var d = document.createElement('div');
-    d.textContent = String(s == null ? '' : s);
-    return d.innerHTML;
   }
 
   function initMarquee(projects) {
@@ -37,9 +43,14 @@
     projects.forEach(function (p) {
       for (var i = 0; i < 3; i++) items.push(p.name);
     });
-    // duplicate for seamless loop
-    var content = items.concat(items).map(function (name) { return '<span>' + esc(name) + '</span>'; }).join('');
+    var content = items.concat(items).map(function (name) {
+      return '<span></span>';
+    }).join('');
     els.marquee.innerHTML = content;
+    var spans = els.marquee.querySelectorAll('span');
+    items.concat(items).forEach(function (name, i) {
+      if (spans[i]) spans[i].textContent = name;
+    });
   }
 
   function render(data) {
@@ -59,9 +70,7 @@
   function renderFilter() {
     var projects = state.data.projects || [];
     var chips = [makeChip('all', '全部')];
-    projects.forEach(function (p) {
-      chips.push(makeChip(p.id, p.name));
-    });
+    projects.forEach(function (p) { chips.push(makeChip(p.id, p.name)); });
     els.filterBar.innerHTML = '';
     chips.forEach(function (c) { els.filterBar.appendChild(c); });
   }
@@ -129,7 +138,23 @@
     thumb.className = 'video-thumb';
     thumb.style.setProperty('--grad-a', gradColor(pi, vi, 0));
     thumb.style.setProperty('--grad-b', gradColor(pi, vi, 1));
-    thumb.innerHTML = '<div class="play-icon">' + buildIcon() + '</div>';
+
+    var cover = document.createElement('video');
+    cover.className = 'video-cover';
+    cover.muted = true;
+    cover.playsInline = true;
+    cover.preload = 'metadata';
+    cover.tabIndex = -1;
+    cover.setAttribute('aria-hidden', 'true');
+    cover.setAttribute('disablepictureinpicture', '');
+    cover.setAttribute('controlslist', 'nodownload nofullscreen noremoteplayback');
+    thumb.appendChild(cover);
+
+    var play = document.createElement('div');
+    play.className = 'play-icon';
+    play.innerHTML = buildIcon();
+    thumb.appendChild(play);
+
     card.appendChild(thumb);
 
     var meta = document.createElement('div');
@@ -144,9 +169,26 @@
     meta.appendChild(proj);
     card.appendChild(meta);
 
-    function open() {
-      openModal(video, project);
+    var loaded = false;
+    function loadCover() {
+      if (loaded) return;
+      loaded = true;
+      // Load metadata, then seek to ~0.5s so the first non-black frame is painted as the cover.
+      cover.src = video.url;
+      cover.addEventListener('loadeddata', function onData() {
+        cover.removeEventListener('loadeddata', onData);
+        try { cover.currentTime = 0.5; } catch (e) {}
+      });
+      if (coverObserver) coverObserver.unobserve(card);
     }
+    card._loadCover = loadCover;
+    if (coverObserver) {
+      coverObserver.observe(card);
+    } else {
+      loadCover();
+    }
+
+    function open() { openModal(video, project); }
     card.addEventListener('click', open);
     card.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
@@ -174,7 +216,7 @@
     els.video.src = video.url;
     els.modal.hidden = false;
     document.body.style.overflow = 'hidden';
-    els.video.play().catch(function () { /* 等待用户交互时忽略 */ });
+    els.video.play().catch(function () { /* autoplay may be blocked until interaction */ });
   }
 
   function closeModal() {
@@ -208,7 +250,7 @@
       els.loading.hidden = true;
       render(data);
     })
-    .catch(function () {
-      showError();
-    });
+    .catch(function () { showError(); });
 })();
+
+
