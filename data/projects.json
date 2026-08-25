@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "作品集",
-    "subtitle": "视频作品展示 · 随时随地打开查看"
+    "title": "AIGC",
+    "subtitle": "视频展示 · 随时随地打开查看"
   },
   "projects": [
     {
@@ -26,10 +26,10 @@
     },
     {
       "id": "bingmayong",
-      "name": "兵马俑（中英）",
+      "name": "兵马俑",
       "videos": [
         {
-          "title": "兵马俑（中英）",
+          "title": "兵马俑",
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%85%B5%E9%A9%AC%E4%BF%91%E4%B8%AD%E8%8B%B1/%E5%85%B5%E9%A9%AC%E4%BF%91%E4%B8%AD%E8%8B%B1.mp4"
         }
       ]
