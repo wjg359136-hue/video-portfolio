@@ -3,37 +3,14 @@
     "title": "作品集",
     "subtitle": "视频作品展示 · 随时随地打开查看"
   },
-  "note": "url 为腾讯云 COS 直链（桶 wu-1474585651，地域 ap-guangzhou）。新加视频时把链接换成你的 COS 直链即可。",
+  "note": "临时测试版：仅 1 个视频验证播放可行性；确认后恢复全部 11 个。",
   "projects": [
     {
-      "id": "guofeng",
-      "name": "国风系列款式",
+      "id": "test",
+      "name": "测试",
       "videos": [
-        { "title": "龙 317", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/guofeng/long317.mp4" },
-        { "title": "兵马俑（中英）", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/guofeng/bingmayong-cn.mp4" },
-        { "title": "梭伦品牌宣传（中英）", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/guofeng/suolun-brand-cn.mp4" }
-      ]
-    },
-    {
-      "id": "riyue",
-      "name": "410 日月星辰",
-      "videos": [
-        { "title": "日月星辰", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/riyue/riyue-xingchen.mp4" },
-        { "title": "23", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/riyue/23.mp4" },
-        { "title": "55", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/riyue/55.mp4" },
-        { "title": "视频节点 4", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/riyue/video-node-4.mp4" }
-      ]
-    },
-    {
-      "id": "jingtailan",
-      "name": "景泰蓝",
-      "videos": [
-        { "title": "0", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/jingtailan/0.mp4" },
-        { "title": "视频 27", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/jingtailan/video-27.mp4" },
-        { "title": "视频节点 8", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/jingtailan/video-node-8.mp4" },
-        { "title": "IP", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/jingtailan/ip.mp4" }
+        { "title": "测试视频", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/guofeng/ip.mp4" }
       ]
     }
   ]
 }
-
