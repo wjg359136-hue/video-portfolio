@@ -1,36 +1,28 @@
-# 首批视频上传清单
+# 当前已上传视频清单（线上版本）
 
-> 操作：登录腾讯云 COS 控制台，在桶里新建 `videos/` 目录，按下面「COS 目标路径」逐级创建子目录并上传对应本地文件（可直接拖拽）。上传完成后，把直链填入 `data/projects.json`（或把桶名/地域告诉助手一键替换）。
+腾讯云 COS 桶：`wu-1474585651`（广州 ap-guangzhou，公有读私有写）
+直链前缀：`https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/`
 
-当前占位直链格式：`https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/...`
-（`sollen-video-portfolio` 换成你的真实桶名，`ap-shanghai` 换成真实地域）
+| 项目 | 文件（COS 路径 videos/ 下） | 标题 |
+| --- | --- | --- |
+| 312 | `312/312.mp4` | 312 |
+| 兰花 | `兰花/兰花.mp4` | 兰花 |
+| 兵马俑（中英） | `兵马俑中英/兵马俑中英.mp4` | 兵马俑（中英） |
+| 司南 | `司南/305x.mp4` | 司南 |
+| 孔雀 | `孔雀/孔雀.mp4` | 孔雀 |
+| 景泰蓝 | `景泰蓝/景泰蓝(1)1.mp4` | 景泰蓝 |
+| 琉璃 | `琉璃/.320.mp4` | 琉璃 |
+| 脸谱 | `脸谱/脸谱.mp4` | 脸谱 |
+| 鲲 | `鲲/鲲.mp4` | 鲲 |
+| 龙 317 | `龙317/龙317.mp4` | 龙 317 |
+| 瑞顿 | `瑞顿/梭伦品牌宣传.（中英）.mp4` | 梭伦品牌宣传（中英） |
+| 瑞顿 | `瑞顿/品宣3.mp4` | 品宣 3 |
+| 瑞顿 | `瑞顿/长城女.mp4` | 长城女 |
+| 瑞顿 | `瑞顿/瑞顿2.mp4` | 瑞顿 2 |
+| 瑞顿 | `瑞顿/RT492.mp4` | RT492 |
+| 瑞顿 | `瑞顿/RT493-1.mp4` | RT493-1 |
+| 瑞顿 | `瑞顿/RT495-1.mp4` | RT495-1 |
+| 瑞顿 | `瑞顿/RT732-1.mp4` | RT732-1 |
+| 瑞顿 | `瑞顿/RT733-1.mp4` | RT733-1 |
 
-## 国风系列款式（id: guofeng，3 个）
-
-| # | 本地文件 | COS 目标路径 | 直链 |
-| --- | --- | --- | --- |
-| 1 | `桌面\国风系列款式\317龙\龙317.mp4` | `videos/guofeng/long317.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/guofeng/long317.mp4 |
-| 2 | `桌面\国风系列款式\322兵马俑\兵马俑中英.mp4` | `videos/guofeng/bingmayong-cn.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/guofeng/bingmayong-cn.mp4 |
-| 3 | `桌面\国风系列款式\梭伦品牌宣传.（中英）\梭伦品牌宣传.（中英）.mp4` | `videos/guofeng/suolun-brand-cn.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/guofeng/suolun-brand-cn.mp4 |
-
-## 410 日月星辰（id: riyue，4 个）
-
-| # | 本地文件 | COS 目标路径 | 直链 |
-| --- | --- | --- | --- |
-| 1 | `桌面\410日月星辰\日月星辰\日月星辰.mp4` | `videos/riyue/riyue-xingchen.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/riyue/riyue-xingchen.mp4 |
-| 2 | `桌面\410日月星辰\23.mp4` | `videos/riyue/23.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/riyue/23.mp4 |
-| 3 | `桌面\410日月星辰\55.mp4` | `videos/riyue/55.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/riyue/55.mp4 |
-| 4 | `桌面\410日月星辰\视频节点 4.mp4` | `videos/riyue/video-node-4.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/riyue/video-node-4.mp4 |
-
-> 未收录（副本/旧版，如需要可替换）：`视频节点 3 - 副本.mp4`、`视频节点 4 - 副本.mp4`、`视频一键去字幕-视频节点 3 - 副本.mp4`、`视频一键去字幕-视频节点 4.mp4`
-
-## 景泰蓝（id: jingtailan，4 个）
-
-| # | 本地文件 | COS 目标路径 | 直链 |
-| --- | --- | --- | --- |
-| 1 | `桌面\老板\景泰蓝\0.mp4` | `videos/jingtailan/0.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/jingtailan/0.mp4 |
-| 2 | `桌面\老板\景泰蓝\视频27.mp4` | `videos/jingtailan/video-27.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/jingtailan/video-27.mp4 |
-| 3 | `桌面\老板\景泰蓝\视频节点 8.mp4` | `videos/jingtailan/video-node-8.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/jingtailan/video-node-8.mp4 |
-| 4 | `桌面\老板\景泰蓝\ip.mp4` | `videos/jingtailan/ip.mp4` | https://sollen-video-portfolio.cos.ap-shanghai.myqcloud.com/videos/jingtailan/ip.mp4 |
-
-> 未收录（副本）：`视频节点 8 - 副本.mp4`、`视频节点 8 - 副本 (1).mp4`、`视频节点 8 - 副本 (2).mp4`、`视频节点 8 - 副本 (3).mp4`
+> 说明：本地上传暂存目录 `upload-staging/` 已不需要，可自行删除；桶里旧的 `videos/guofeng/` 测试文件夹（含误传的 ip.mp4）也可在控制台删除。

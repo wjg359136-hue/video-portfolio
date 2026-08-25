@@ -12,7 +12,7 @@ css/style.css         # 样式（响应式，手机/电脑均可）
 js/app.js             # 渲染逻辑（读取 data/projects.json）
 data/projects.json    # ★ 唯一需要维护的数据文件：项目与视频列表
 scripts/add-video.ps1 # 追加视频的小脚本
-docs/upload-checklist.md  # 首批视频上传对照清单
+docs/upload-checklist.md  # 当前已上传视频清单
 ```
 
 ## 网站怎么运作
@@ -21,15 +21,14 @@ docs/upload-checklist.md  # 首批视频上传对照清单
 
 ## 如何添加新视频（三步）
 
-1. **上传视频到 COS**：登录腾讯云 COS 控制台，把 MP4 传到对应项目的 `videos/<项目id>/` 目录（例如 `videos/guofeng/`），拿到直链，形如：
-   `https://<桶名>.cos.<地域>.myqcloud.com/videos/guofeng/xxx.mp4`
+1. **上传视频到 COS**：登录腾讯云 COS 控制台，把 MP4 传到对应项目的 `videos/<项目名>/` 目录，拿到直链（形如 `https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/xxx/xxx.mp4`）。
 2. **更新 `data/projects.json`**，二选一：
-   - 用脚本（推荐，推荐用项目 id）：
+   - 用脚本（推荐）：
      ```powershell
-     .\scripts\add-video.ps1 -Project guofeng -Title "新作品标题" -Url "https://<桶名>.cos.<地域>.myqcloud.com/videos/guofeng/new.mp4"
+     .\scripts\add-video.ps1 -Project 瑞顿 -Title "新作品" -Url "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/瑞顿/new.mp4"
      ```
-     项目不存在时加 `-NewProject` 可自动创建；用中文项目名也可以（在自己的 PowerShell 窗口里直接输入）。
-   - 或手动编辑 JSON：在对应项目的 `videos` 数组里加一行 `{ "title": "标题", "url": "直链" }`。
+     项目不存在时加 `-NewProject` 可自动创建。
+   - 或手动编辑 JSON：在对应项目的 `videos` 数组里加一行 `{ "title": "标题", "url": "直链" }`（中文路径会被自动转码，无需手动处理）。
 3. **推送到 GitHub**：
    ```powershell
    git add -A
@@ -38,30 +37,30 @@ docs/upload-checklist.md  # 首批视频上传对照清单
    ```
    推送后 GitHub Pages 会自动更新，稍等 1-2 分钟刷新页面即可看到。
 
-## 部署状态（已完成部分）
+## 部署状态
 
-- ✅ GitHub 仓库：`wjg359136-hue/video-portfolio`
-- ✅ GitHub Pages 已开启（main 分支 / 根目录）
+- ✅ GitHub 仓库：`wjg359136-hue/video-portfolio`，Pages 已开启（main / 根目录）
 - ✅ 正式链接：https://wjg359136-hue.github.io/video-portfolio/
-- ⏳ 待完成：腾讯云 COS 建桶 + 上传视频 + 替换占位链接（见下）
+- ✅ 腾讯云 COS 桶 `wu-1474585651`（广州 ap-guangzhou，公有读私有写），已上传 19 个视频
 
-### 腾讯云 COS（存视频，待完成）
-1. 注册/登录腾讯云，开通对象存储 COS。
-2. 创建存储桶：名称建议 `sollen-video-portfolio`，地域选离你近的（如 `ap-shanghai` 上海），访问权限选 **公有读私有写**。
-3. 把视频文件传到 `videos/<项目id>/` 目录（对照 `docs/upload-checklist.md`）。
-4. 每个视频在「详情」里能看到对象地址，即直链。
-5. 把**真实桶名和地域**告诉助手，助手会替换 `data/projects.json` 中的占位链接并推送上线。
+## 当前项目
 
-## 项目 id 对照
-
-| 项目 | id |
+| 项目 | 视频数 |
 | --- | --- |
-| 国风系列款式 | `guofeng` |
-| 410 日月星辰 | `riyue` |
-| 景泰蓝 | `jingtailan` |
+| 312 | 1 |
+| 兰花 | 1 |
+| 兵马俑（中英） | 1 |
+| 司南 | 1 |
+| 孔雀 | 1 |
+| 景泰蓝 | 1 |
+| 琉璃 | 1 |
+| 脸谱 | 1 |
+| 鲲 | 1 |
+| 龙 317 | 1 |
+| 瑞顿 | 9 |
 
 ## 常见问题
 
-- **视频播放不出来？** 确认 COS 桶是「公有读私有写」、直链能直接在浏览器打开、`data/projects.json` 里的链接已替换为真实桶名/地域。
+- **视频播放不出来？** 确认 COS 桶是「公有读私有写」、直链能直接在浏览器打开。
+- **微信内置浏览器播放异常？** 腾讯云对 2024 年后创建的桶，默认域名带「强制下载」头；桌面浏览器（Chrome/Edge）会忽略该头正常播放，个别 App 内嵌浏览器可能表现为下载。若遇到，可后续绑定自定义域名解决。
 - **国内访问 GitHub Pages 慢？** 可后续把网页也部署一份到 COS 静态网站托管做镜像。
-- **想给视频加封面？** v1 暂未做封面，后续可安装 ffmpeg 自动截帧生成。
