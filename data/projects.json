@@ -3,13 +3,147 @@
     "title": "作品集",
     "subtitle": "视频作品展示 · 随时随地打开查看"
   },
-  "note": "临时测试版：仅 1 个视频验证播放可行性；确认后恢复全部 11 个。",
   "projects": [
     {
-      "id": "test",
-      "name": "测试",
+      "id": "s312",
+      "name": "312",
       "videos": [
-        { "title": "测试视频", "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/guofeng/ip.mp4" }
+        {
+          "title": "312",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/312/312.mp4"
+        }
+      ]
+    },
+    {
+      "id": "lanhua",
+      "name": "兰花",
+      "videos": [
+        {
+          "title": "兰花",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%85%B0%E8%8A%B1/%E5%85%B0%E8%8A%B1.mp4"
+        }
+      ]
+    },
+    {
+      "id": "bingmayong",
+      "name": "兵马俑（中英）",
+      "videos": [
+        {
+          "title": "兵马俑（中英）",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%85%B5%E9%A9%AC%E4%BF%91%E4%B8%AD%E8%8B%B1/%E5%85%B5%E9%A9%AC%E4%BF%91%E4%B8%AD%E8%8B%B1.mp4"
+        }
+      ]
+    },
+    {
+      "id": "sinan",
+      "name": "司南",
+      "videos": [
+        {
+          "title": "司南",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%8F%B8%E5%8D%97/305x.mp4"
+        }
+      ]
+    },
+    {
+      "id": "kongque",
+      "name": "孔雀",
+      "videos": [
+        {
+          "title": "孔雀",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%AD%94%E9%9B%80/%E5%AD%94%E9%9B%80.mp4"
+        }
+      ]
+    },
+    {
+      "id": "jingtailan",
+      "name": "景泰蓝",
+      "videos": [
+        {
+          "title": "景泰蓝",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E6%99%AF%E6%B3%B0%E8%93%9D/%E6%99%AF%E6%B3%B0%E8%93%9D(1)1.mp4"
+        }
+      ]
+    },
+    {
+      "id": "liuli",
+      "name": "琉璃",
+      "videos": [
+        {
+          "title": "琉璃",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%90%89%E7%92%83/.320.mp4"
+        }
+      ]
+    },
+    {
+      "id": "lianpu",
+      "name": "脸谱",
+      "videos": [
+        {
+          "title": "脸谱",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E8%84%B8%E8%B0%B1/%E8%84%B8%E8%B0%B1.mp4"
+        }
+      ]
+    },
+    {
+      "id": "kun",
+      "name": "鲲",
+      "videos": [
+        {
+          "title": "鲲",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E9%B2%B2/%E9%B2%B2.mp4"
+        }
+      ]
+    },
+    {
+      "id": "long317",
+      "name": "龙 317",
+      "videos": [
+        {
+          "title": "龙 317",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E9%BE%99317/%E9%BE%99317.mp4"
+        }
+      ]
+    },
+    {
+      "id": "ruidun",
+      "name": "瑞顿",
+      "videos": [
+        {
+          "title": "梭伦品牌宣传（中英）",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/%E6%A2%AD%E4%BC%A6%E5%93%81%E7%89%8C%E5%AE%A3%E4%BC%A0.%EF%BC%88%E4%B8%AD%E8%8B%B1%EF%BC%89.mp4"
+        },
+        {
+          "title": "品宣 3",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/%E5%93%81%E5%AE%A33.mp4"
+        },
+        {
+          "title": "长城女",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/%E9%95%BF%E5%9F%8E%E5%A5%B3.mp4"
+        },
+        {
+          "title": "瑞顿 2",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/%E7%91%9E%E9%A1%BF2.mp4"
+        },
+        {
+          "title": "RT492",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/RT492.mp4"
+        },
+        {
+          "title": "RT493-1",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/RT493-1.mp4"
+        },
+        {
+          "title": "RT495-1",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/RT495-1.mp4"
+        },
+        {
+          "title": "RT732-1",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/RT732-1.mp4"
+        },
+        {
+          "title": "RT733-1",
+          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/RT733-1.mp4"
+        }
       ]
     }
   ]
