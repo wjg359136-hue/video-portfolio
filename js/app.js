@@ -3,10 +3,7 @@
 
   var DATA_URL = 'data/projects.json';
 
-  var state = {
-    data: null,
-    activeProject: 'all'
-  };
+  var state = { data: null, activeProject: 'all' };
 
   var els = {
     title: document.getElementById('site-title'),
@@ -20,7 +17,8 @@
     video: document.getElementById('modal-video'),
     modalError: document.getElementById('modal-error'),
     closeBtn: document.getElementById('modal-close'),
-    backdrop: document.getElementById('modal-backdrop')
+    backdrop: document.getElementById('modal-backdrop'),
+    marquee: document.getElementById('marquee')
   };
 
   function buildIcon() {
@@ -33,6 +31,17 @@
     return d.innerHTML;
   }
 
+  function initMarquee(projects) {
+    if (!els.marquee) return;
+    var items = [];
+    projects.forEach(function (p) {
+      for (var i = 0; i < 3; i++) items.push(p.name);
+    });
+    // duplicate for seamless loop
+    var content = items.concat(items).map(function (name) { return '<span>' + esc(name) + '</span>'; }).join('');
+    els.marquee.innerHTML = content;
+  }
+
   function render(data) {
     state.data = data;
     if (data.site) {
@@ -42,6 +51,7 @@
       }
       if (data.site.subtitle) els.subtitle.textContent = data.site.subtitle;
     }
+    initMarquee(data.projects || []);
     renderFilter();
     renderProjects();
   }
@@ -66,7 +76,8 @@
       document.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); });
       btn.classList.add('active');
       renderProjects();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      var works = document.getElementById('works');
+      if (works) works.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     return btn;
   }
@@ -144,12 +155,12 @@
   }
 
   var PALETTES = [
-    ['#3a4a6b', '#1a2233'],
-    ['#6b4a3a', '#2b1c14'],
-    ['#3a6b55', '#14261d'],
-    ['#5b3a6b', '#221430'],
-    ['#6b5a3a', '#2a2114'],
-    ['#3a5f6b', '#14222a']
+    ['#25252a', '#0e0e10'],
+    ['#2b1d17', '#0e0e10'],
+    ['#1d2520', '#0e0e10'],
+    ['#241a2b', '#0e0e10'],
+    ['#2b2316', '#0e0e10'],
+    ['#1a232b', '#0e0e10']
   ];
 
   function gradColor(pi, vi, idx) {

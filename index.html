@@ -3,29 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>作品集</title>
-  <meta name="description" content="视频作品集，随时随地在不同设备打开查看">
+  <title>AIGC</title>
+  <meta name="description" content="AIGC 视频作品集">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="site-title" id="site-title">作品集</h1>
-      <p class="site-subtitle" id="site-subtitle">视频作品展示</p>
+  <!-- 顶部导航 -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">A</span>
+        <span class="logo-text">AIGC</span>
+      </a>
+      <a href="#works" class="cta-pill">
+        观看作品
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
     </div>
   </header>
 
-  <nav class="filter-bar" id="filter-bar" aria-label="项目筛选"></nav>
+  <!-- Hero 区域 -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-orb"></div>
+    <div class="container hero-content">
+      <p class="hero-eyebrow">AIGC VIDEO PORTFOLIO</p>
+      <h1 class="hero-title" id="site-title">AIGC</h1>
+      <p class="hero-subtitle" id="site-subtitle">视频展示 · 随时随地打开查看</p>
+      <div class="hero-cta-row">
+        <a href="#works" class="cta-primary">
+          浏览全部作品
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <main class="container" id="app">
-    <p class="loading" id="loading">加载中…</p>
-    <p class="error" id="error" hidden>数据加载失败，请稍后刷新重试。</p>
+  <!-- 跑马灯分类条 -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee" id="marquee"></div>
+  </div>
+
+  <!-- 主内容 -->
+  <main id="works" class="main-content">
+    <div class="section-head">
+      <div class="container">
+        <p class="section-eyebrow">SELECTED WORKS</p>
+        <h2 class="section-title">精选作品</h2>
+        <p class="section-desc">点击卡片即可播放完整视频</p>
+      </div>
+    </div>
+
+    <nav class="filter-bar" id="filter-bar" aria-label="项目筛选"></nav>
+
+    <div class="container" id="app">
+      <p class="loading" id="loading">加载中…</p>
+      <p class="error" id="error" hidden>数据加载失败，请稍后刷新重试。</p>
+    </div>
   </main>
 
+  <!-- 页脚 -->
   <footer class="site-footer">
-    <div class="container">作品集 · 随时随地在不同设备打开</div>
+    <div class="footer-glow"></div>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">A</span>
+        <span>AIGC</span>
+      </div>
+      <p class="footer-copy">视频作品集 · 随时随地在不同设备打开</p>
+    </div>
   </footer>
 
+  <!-- 视频弹窗 -->
   <div class="modal" id="video-modal" hidden>
     <div class="modal-backdrop" id="modal-backdrop"></div>
     <div class="modal-box" role="dialog" aria-modal="true" aria-label="视频播放">
