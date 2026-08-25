@@ -2,6 +2,8 @@
 
 一个公开、可随时随地打开的中文视频作品集单页网站。网页托管在 GitHub Pages（免费永久链接），视频文件存放在腾讯云 COS（生成可直接播放的直链）。
 
+**正式链接：https://wjg359136-hue.github.io/video-portfolio/**
+
 ## 目录结构
 
 ```
@@ -36,28 +38,19 @@ docs/upload-checklist.md  # 首批视频上传对照清单
    ```
    推送后 GitHub Pages 会自动更新，稍等 1-2 分钟刷新页面即可看到。
 
-## 首次部署（一次性）
+## 部署状态（已完成部分）
 
-### 1. 腾讯云 COS（存视频）
+- ✅ GitHub 仓库：`wjg359136-hue/video-portfolio`
+- ✅ GitHub Pages 已开启（main 分支 / 根目录）
+- ✅ 正式链接：https://wjg359136-hue.github.io/video-portfolio/
+- ⏳ 待完成：腾讯云 COS 建桶 + 上传视频 + 替换占位链接（见下）
+
+### 腾讯云 COS（存视频，待完成）
 1. 注册/登录腾讯云，开通对象存储 COS。
 2. 创建存储桶：名称建议 `sollen-video-portfolio`，地域选离你近的（如 `ap-shanghai` 上海），访问权限选 **公有读私有写**。
 3. 把视频文件传到 `videos/<项目id>/` 目录（对照 `docs/upload-checklist.md`）。
 4. 每个视频在「详情」里能看到对象地址，即直链。
-
-### 2. GitHub Pages（存网页）
-1. 注册 GitHub 免费账号。
-2. 新建仓库，名称填 `video-portfolio`（空仓库，不勾选 README）。
-3. 把本目录推送到该仓库：
-   ```powershell
-   git remote add origin https://github.com/<你的用户名>/video-portfolio.git
-   git branch -M main
-   git push -u origin main
-   ```
-4. 打开仓库 Settings → Pages → Source 选 `Deploy from a branch` → 分支选 `main` / 根目录 `/` → Save。
-5. 等 1-2 分钟，访问：`https://<你的用户名>.github.io/video-portfolio/`
-
-### 3. 替换占位链接
-`data/projects.json` 中的链接目前是占位桶名 `sollen-video-portfolio` 和占位地域 `ap-shanghai`。确认你的真实桶名/地域后，把链接中的这两处替换掉（可以手动替换，也可以把真实桶名和地域告诉你的助手一键替换）。
+5. 把**真实桶名和地域**告诉助手，助手会替换 `data/projects.json` 中的占位链接并推送上线。
 
 ## 项目 id 对照
 
