@@ -64,3 +64,21 @@ docs/upload-checklist.md  # 当前已上传视频清单
 - **视频播放不出来？** 确认 COS 桶是「公有读私有写」、直链能直接在浏览器打开。
 - **微信内置浏览器播放异常？** 腾讯云对 2024 年后创建的桶，默认域名带「强制下载」头；桌面浏览器（Chrome/Edge）会忽略该头正常播放，个别 App 内嵌浏览器可能表现为下载。若遇到，可后续绑定自定义域名解决。
 - **国内访问 GitHub Pages 慢？** 可后续把网页也部署一份到 COS 静态网站托管做镜像。
+
+## 维护状态（2026-08-26 起）
+
+网站当前处于**暂停维护**状态：`index.html` 临时替换为「维护中」页面，视频不再加载，不再产生 COS 下行流量费用。原页面完整备份在本机 `index.original.html`。
+
+### 恢复网站（三步）
+
+1. 在本仓库执行：
+   ```powershell
+   Copy-Item index.original.html index.html -Force
+   git add index.html
+   git commit -m "恢复网站"
+   git push
+   ```
+2. 等 1-2 分钟 GitHub Pages 自动更新。
+3. 打开 https://wjg359136-hue.github.io/video-portfolio/ 确认视频恢复播放。
+
+> 恢复前请先在腾讯云确认账户余额充足，或购买 COS 外网下行流量包，避免再次欠费。
