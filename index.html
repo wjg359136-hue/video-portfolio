@@ -3,90 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AIGC</title>
-  <meta name="description" content="AIGC 视频作品集">
-  <link rel="stylesheet" href="css/style.css">
+  <title>AIGC · 维护中</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #0d0d0f;
+      color: #f5f3ee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .wrap { text-align: center; max-width: 420px; }
+    .mark {
+      width: 64px; height: 64px; margin: 0 auto 24px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 18px;
+      font-size: 30px; font-weight: 800; color: #fff;
+      background: linear-gradient(135deg, #ff5f3c 0%, #ff9a3c 100%);
+      box-shadow: 0 12px 32px rgba(255, 95, 60, 0.35);
+    }
+    h1 { font-size: 22px; font-weight: 700; letter-spacing: 0; margin-bottom: 12px; }
+    p { font-size: 15px; line-height: 1.7; color: #9b9a94; }
+    .dot {
+      display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+      background: #ff7a3c; margin-right: 8px; vertical-align: 1px;
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  </style>
 </head>
 <body>
-  <!-- 顶部导航 -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a href="#" class="logo">
-        <span class="logo-mark">A</span>
-        <span class="logo-text">AIGC</span>
-      </a>
-      <a href="#works" class="cta-pill">
-        观看作品
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-    </div>
-  </header>
-
-  <!-- Hero 区域 -->
-  <section class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-orb"></div>
-    <div class="container hero-content">
-      <p class="hero-eyebrow">AIGC VIDEO PORTFOLIO</p>
-      <h1 class="hero-title" id="site-title">AIGC</h1>
-      <p class="hero-subtitle" id="site-subtitle">视频展示 · 随时随地打开查看</p>
-      <div class="hero-cta-row">
-        <a href="#works" class="cta-primary">
-          浏览全部作品
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 跑马灯分类条 -->
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee" id="marquee"></div>
+  <div class="wrap">
+    <div class="mark">A</div>
+    <h1>AIGC</h1>
+    <p><span class="dot"></span>站点维护中，视频暂时停播</p>
+    <p style="margin-top:10px; font-size:13px; color:#6f6e68;">作品与数据已安全保留，恢复后将自动开放</p>
   </div>
-
-  <!-- 主内容 -->
-  <main id="works" class="main-content">
-    <div class="section-head">
-      <div class="container">
-        <p class="section-eyebrow">SELECTED WORKS</p>
-        <h2 class="section-title">精选作品</h2>
-        <p class="section-desc">点击卡片即可播放完整视频</p>
-      </div>
-    </div>
-
-    <nav class="filter-bar" id="filter-bar" aria-label="项目筛选"></nav>
-
-    <div class="container" id="app">
-      <p class="loading" id="loading">加载中…</p>
-      <p class="error" id="error" hidden>数据加载失败，请稍后刷新重试。</p>
-    </div>
-  </main>
-
-  <!-- 页脚 -->
-  <footer class="site-footer">
-    <div class="footer-glow"></div>
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="logo-mark">A</span>
-        <span>AIGC</span>
-      </div>
-      <p class="footer-copy">视频作品集 · 随时随地在不同设备打开</p>
-    </div>
-  </footer>
-
-  <!-- 视频弹窗 -->
-  <div class="modal" id="video-modal" hidden>
-    <div class="modal-backdrop" id="modal-backdrop"></div>
-    <div class="modal-box" role="dialog" aria-modal="true" aria-label="视频播放">
-      <button class="modal-close" id="modal-close" aria-label="关闭" type="button">&times;</button>
-      <h2 class="modal-title" id="modal-title"></h2>
-      <div class="modal-video-wrap">
-        <video id="modal-video" controls playsinline preload="metadata"></video>
-        <p class="modal-error" id="modal-error" hidden>视频加载失败，请检查链接或稍后重试。</p>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/app.js"></script>
 </body>
 </html>
