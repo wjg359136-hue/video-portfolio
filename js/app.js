@@ -12,29 +12,16 @@
     app: document.getElementById('app'),
     loading: document.getElementById('loading'),
     error: document.getElementById('error'),
-    modal: document.getElementById('video-modal'),
-    modalTitle: document.getElementById('modal-title'),
-    video: document.getElementById('modal-video'),
-    modalError: document.getElementById('modal-error'),
-    closeBtn: document.getElementById('modal-close'),
-    backdrop: document.getElementById('modal-backdrop'),
     marquee: document.getElementById('marquee')
   };
 
-  // Lazy-load first-frame covers only when cards scroll into view.
-  var coverObserver = 'IntersectionObserver' in window
-    ? new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var card = entry.target;
-            if (card._loadCover) { card._loadCover(); }
-          }
-        });
-      }, { rootMargin: '200px' })
-    : null;
+  function folderIcon() {
+    return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>';
+  }
 
-  function buildIcon() {
-    return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  function openFolder(url) {
+    if (!url) return;
+    window.open(url, '_blank', 'noopener');
   }
 
   function initMarquee(projects) {
@@ -43,7 +30,7 @@
     projects.forEach(function (p) {
       for (var i = 0; i < 3; i++) items.push(p.name);
     });
-    var content = items.concat(items).map(function (name) {
+    var content = items.concat(items).map(function () {
       return '<span></span>';
     }).join('');
     els.marquee.innerHTML = content;
@@ -99,61 +86,37 @@
     if (!projects.length) {
       var empty = document.createElement('p');
       empty.className = 'loading';
-      empty.textContent = '暂无视频';
+      empty.textContent = '暂无项目';
       els.app.appendChild(empty);
       return;
     }
+    var grid = document.createElement('div');
+    grid.className = 'video-grid';
     projects.forEach(function (p, i) {
-      var section = document.createElement('section');
-      section.className = 'project-section';
-
-      var head = document.createElement('div');
-      head.className = 'project-head';
-      var name = document.createElement('h2');
-      name.className = 'project-name';
-      name.textContent = p.name;
-      var count = document.createElement('span');
-      count.className = 'project-count';
-      count.textContent = p.videos.length + ' 个视频';
-      head.appendChild(name);
-      head.appendChild(count);
-      section.appendChild(head);
-
-      var grid = document.createElement('div');
-      grid.className = 'video-grid';
-      (p.videos || []).forEach(function (v, j) {
-        grid.appendChild(makeCard(p, v, i, j));
-      });
-      section.appendChild(grid);
-      els.app.appendChild(section);
+      grid.appendChild(makeCard(p, i));
     });
+    els.app.appendChild(grid);
   }
 
-  function makeCard(project, video, pi, vi) {
+  function makeCard(project, pi) {
     var card = document.createElement('article');
     card.className = 'video-card';
     card.tabIndex = 0;
 
     var thumb = document.createElement('div');
     thumb.className = 'video-thumb';
-    thumb.style.setProperty('--grad-a', gradColor(pi, vi, 0));
-    thumb.style.setProperty('--grad-b', gradColor(pi, vi, 1));
+    thumb.style.setProperty('--grad-a', gradColor(pi, 0, 0));
+    thumb.style.setProperty('--grad-b', gradColor(pi, 0, 1));
 
-    var cover = document.createElement('video');
-    cover.className = 'video-cover';
-    cover.muted = true;
-    cover.playsInline = true;
-    cover.preload = 'metadata';
-    cover.tabIndex = -1;
-    cover.setAttribute('aria-hidden', 'true');
-    cover.setAttribute('disablepictureinpicture', '');
-    cover.setAttribute('controlslist', 'nodownload nofullscreen noremoteplayback');
-    thumb.appendChild(cover);
+    var folder = document.createElement('div');
+    folder.className = 'folder-icon';
+    folder.innerHTML = folderIcon();
+    thumb.appendChild(folder);
 
-    var play = document.createElement('div');
-    play.className = 'play-icon';
-    play.innerHTML = buildIcon();
-    thumb.appendChild(play);
+    var badge = document.createElement('span');
+    badge.className = 'video-badge';
+    badge.textContent = (project.videos || []).length + ' 个视频';
+    thumb.appendChild(badge);
 
     card.appendChild(thumb);
 
@@ -161,34 +124,15 @@
     meta.className = 'video-meta';
     var title = document.createElement('div');
     title.className = 'video-title';
-    title.textContent = video.title || '未命名视频';
+    title.textContent = project.name;
     var proj = document.createElement('div');
     proj.className = 'video-project';
-    proj.textContent = project.name;
+    proj.textContent = (project.videos || []).map(function (v) { return v.title; }).join(' · ') || '打开文件夹查看';
     meta.appendChild(title);
     meta.appendChild(proj);
     card.appendChild(meta);
 
-    var loaded = false;
-    function loadCover() {
-      if (loaded) return;
-      loaded = true;
-      // Load metadata, then seek to ~0.5s so the first non-black frame is painted as the cover.
-      cover.src = video.url;
-      cover.addEventListener('loadeddata', function onData() {
-        cover.removeEventListener('loadeddata', onData);
-        try { cover.currentTime = 0.5; } catch (e) {}
-      });
-      if (coverObserver) coverObserver.unobserve(card);
-    }
-    card._loadCover = loadCover;
-    if (coverObserver) {
-      coverObserver.observe(card);
-    } else {
-      loadCover();
-    }
-
-    function open() { openModal(video, project); }
+    function open() { openFolder(project.folderUrl); }
     card.addEventListener('click', open);
     card.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
@@ -210,32 +154,6 @@
     return p[idx];
   }
 
-  function openModal(video, project) {
-    els.modalTitle.textContent = video.title || '未命名视频';
-    els.modalError.hidden = true;
-    els.video.src = video.url;
-    els.modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    els.video.play().catch(function () { /* autoplay may be blocked until interaction */ });
-  }
-
-  function closeModal() {
-    els.modal.hidden = true;
-    els.video.pause();
-    els.video.removeAttribute('src');
-    els.video.load();
-    document.body.style.overflow = '';
-  }
-
-  els.closeBtn.addEventListener('click', closeModal);
-  els.backdrop.addEventListener('click', closeModal);
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !els.modal.hidden) closeModal();
-  });
-  els.video.addEventListener('error', function () {
-    els.modalError.hidden = false;
-  });
-
   function showError() {
     els.loading.hidden = true;
     els.error.hidden = false;
@@ -252,5 +170,3 @@
     })
     .catch(function () { showError(); });
 })();
-
-
