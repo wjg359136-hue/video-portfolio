@@ -166,6 +166,7 @@ body {
 .hero-subtitle {
   color: var(--text-dim);
   font-size: clamp(15px, 2.6vw, 19px);
+  font-weight: 600;
   margin-bottom: 34px;
 }
 
@@ -233,6 +234,7 @@ body {
 .section-desc {
   color: var(--text-dim);
   font-size: 14px;
+  font-weight: 600;
 }
 
 /* ===== 筛选栏 ===== */
