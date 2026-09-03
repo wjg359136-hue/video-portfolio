@@ -108,6 +108,13 @@
     thumb.style.setProperty('--grad-a', gradColor(pi, 0, 0));
     thumb.style.setProperty('--grad-b', gradColor(pi, 0, 1));
 
+    var cover = document.createElement('img');
+    cover.className = 'video-cover-img';
+    cover.alt = project.name;
+    cover.loading = 'lazy';
+    if (project.cover) cover.src = project.cover;
+    thumb.appendChild(cover);
+
     var folder = document.createElement('div');
     folder.className = 'folder-icon';
     folder.innerHTML = folderIcon();

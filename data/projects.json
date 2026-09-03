@@ -13,7 +13,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/312/312.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/5e18dfaea6ca"
+      "folderUrl": "https://pan.quark.cn/s/5e18dfaea6ca",
+      "cover": "images/covers/312.jpg"
     },
     {
       "id": "lanhua",
@@ -24,7 +25,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%85%B0%E8%8A%B1/%E5%85%B0%E8%8A%B1.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/6e1a43ce5fc4"
+      "folderUrl": "https://pan.quark.cn/s/6e1a43ce5fc4",
+      "cover": "images/covers/兰花.jpg"
     },
     {
       "id": "bingmayong",
@@ -35,7 +37,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%85%B5%E9%A9%AC%E4%BF%91%E4%B8%AD%E8%8B%B1/%E5%85%B5%E9%A9%AC%E4%BF%91%E4%B8%AD%E8%8B%B1.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/6cd39a05d3f5"
+      "folderUrl": "https://pan.quark.cn/s/6cd39a05d3f5",
+      "cover": "images/covers/兵马俑中英.jpg"
     },
     {
       "id": "sinan",
@@ -46,7 +49,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%8F%B8%E5%8D%97/305x.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/3bf02796a678"
+      "folderUrl": "https://pan.quark.cn/s/3bf02796a678",
+      "cover": "images/covers/司南.jpg"
     },
     {
       "id": "kongque",
@@ -57,7 +61,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%AD%94%E9%9B%80/%E5%AD%94%E9%9B%80.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/029b7f4f98b5"
+      "folderUrl": "https://pan.quark.cn/s/029b7f4f98b5",
+      "cover": "images/covers/孔雀.jpg"
     },
     {
       "id": "jingtailan",
@@ -68,18 +73,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E6%99%AF%E6%B3%B0%E8%93%9D/%E6%99%AF%E6%B3%B0%E8%93%9D(1)1.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/8e2c2cd6076a"
-    },
-    {
-      "id": "liuli",
-      "name": "琉璃",
-      "videos": [
-        {
-          "title": "琉璃",
-          "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%90%89%E7%92%83/.320.mp4"
-        }
-      ],
-      "folderUrl": "https://pan.quark.cn/s/8e4b90332878"
+      "folderUrl": "https://pan.quark.cn/s/8e2c2cd6076a",
+      "cover": "images/covers/景泰蓝.jpg"
     },
     {
       "id": "lianpu",
@@ -90,7 +85,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E8%84%B8%E8%B0%B1/%E8%84%B8%E8%B0%B1.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/529b3a8da15a"
+      "folderUrl": "https://pan.quark.cn/s/529b3a8da15a",
+      "cover": "images/covers/脸谱.jpg"
     },
     {
       "id": "kun",
@@ -101,7 +97,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E9%B2%B2/%E9%B2%B2.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/89fc1f8c9863"
+      "folderUrl": "https://pan.quark.cn/s/89fc1f8c9863",
+      "cover": "images/covers/鲲.jpg"
     },
     {
       "id": "long317",
@@ -112,7 +109,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E9%BE%99317/%E9%BE%99317.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/0612b31a5b75"
+      "folderUrl": "https://pan.quark.cn/s/0612b31a5b75",
+      "cover": "images/covers/龙317.jpg"
     },
     {
       "id": "ruidun",
@@ -155,7 +153,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E7%91%9E%E9%A1%BF/RT733-1.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/3db5614a1ac7"
+      "folderUrl": "https://pan.quark.cn/s/3db5614a1ac7",
+      "cover": "images/covers/瑞顿.jpg"
     },
     {
       "id": "ip",
@@ -170,7 +169,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/ip/%E7%90%89%E7%92%83.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/c620b1b51617"
+      "folderUrl": "https://pan.quark.cn/s/c620b1b51617",
+      "cover": "images/covers/IP.jpg"
     },
     {
       "id": "weichuangyi",
@@ -181,7 +181,8 @@
           "url": "https://wu-1474585651.cos.ap-guangzhou.myqcloud.com/videos/%E5%BE%AE%E5%88%9B%E6%84%8F/412.mp4"
         }
       ],
-      "folderUrl": "https://pan.quark.cn/s/db002520d179"
+      "folderUrl": "https://pan.quark.cn/s/db002520d179",
+      "cover": "images/covers/微创意.jpg"
     }
   ]
 }
