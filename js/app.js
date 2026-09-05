@@ -122,7 +122,8 @@
 
     var badge = document.createElement('span');
     badge.className = 'video-badge';
-    badge.textContent = (project.videos || []).length + ' 个视频';
+    var videoCount = typeof project.count === 'number' ? project.count : (project.videos || []).length;
+    badge.textContent = videoCount + ' 个视频';
     thumb.appendChild(badge);
 
     card.appendChild(thumb);
