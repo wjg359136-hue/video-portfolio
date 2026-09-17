@@ -3,7 +3,7 @@
 
   var DATA_URL = 'data/projects.json';
 
-  var state = { data: null, activeProject: 'all' };
+  var state = { data: null, activeProject: 'all', activeDialogProject: null };
 
   var els = {
     title: document.getElementById('site-title'),
@@ -15,13 +15,90 @@
     marquee: document.getElementById('marquee')
   };
 
+  var dialog = createPanDialog();
+
   function folderIcon() {
     return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>';
+  }
+
+  function getProjectUrl(project, type) {
+    if (!project) return '';
+    if (type === 'baidu') return project.baiduUrl || project.baiduPanUrl || '';
+    return project.quarkUrl || project.folderUrl || '';
   }
 
   function openFolder(url) {
     if (!url) return;
     window.open(url, '_blank', 'noopener');
+  }
+
+  function createPanDialog() {
+    var overlay = document.createElement('div');
+    overlay.className = 'pan-dialog';
+    overlay.hidden = true;
+    overlay.innerHTML = [
+      '<div class="pan-dialog-backdrop" data-close="true"></div>',
+      '<section class="pan-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="pan-dialog-title">',
+      '  <button class="pan-dialog-close" type="button" aria-label="关闭" data-close="true">×</button>',
+      '  <p class="pan-dialog-eyebrow">选择网盘</p>',
+      '  <h3 class="pan-dialog-title" id="pan-dialog-title">打开作品文件夹</h3>',
+      '  <p class="pan-dialog-copy">请选择要跳转的网盘平台查看视频作品。</p>',
+      '  <div class="pan-dialog-actions">',
+      '    <button class="pan-option baidu" type="button" data-pan="baidu">百度网盘</button>',
+      '    <button class="pan-option quark" type="button" data-pan="quark">夸克网盘</button>',
+      '  </div>',
+      '</section>'
+    ].join('');
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', function (e) {
+      var close = e.target && e.target.getAttribute('data-close');
+      var pan = e.target && e.target.getAttribute('data-pan');
+      if (close) closePanDialog();
+      if (pan) choosePan(pan);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!overlay.hidden && e.key === 'Escape') closePanDialog();
+    });
+
+    return {
+      overlay: overlay,
+      title: overlay.querySelector('.pan-dialog-title'),
+      copy: overlay.querySelector('.pan-dialog-copy'),
+      baidu: overlay.querySelector('[data-pan="baidu"]'),
+      quark: overlay.querySelector('[data-pan="quark"]')
+    };
+  }
+
+  function openPanDialog(project) {
+    state.activeDialogProject = project;
+    var baiduUrl = getProjectUrl(project, 'baidu');
+    var quarkUrl = getProjectUrl(project, 'quark');
+    dialog.title.textContent = project.name + ' · 打开作品文件夹';
+    dialog.copy.textContent = baiduUrl
+      ? '请选择要跳转的网盘平台查看视频作品。'
+      : '百度网盘链接待补充，目前可先打开夸克网盘。';
+    dialog.baidu.disabled = !baiduUrl;
+    dialog.baidu.textContent = baiduUrl ? '百度网盘' : '百度网盘（待补充）';
+    dialog.quark.disabled = !quarkUrl;
+    dialog.quark.textContent = quarkUrl ? '夸克网盘' : '夸克网盘（待补充）';
+    dialog.overlay.hidden = false;
+    document.body.classList.add('dialog-open');
+    (baiduUrl ? dialog.baidu : dialog.quark).focus();
+  }
+
+  function closePanDialog() {
+    dialog.overlay.hidden = true;
+    document.body.classList.remove('dialog-open');
+    state.activeDialogProject = null;
+  }
+
+  function choosePan(type) {
+    var url = getProjectUrl(state.activeDialogProject, type);
+    if (!url) return;
+    closePanDialog();
+    openFolder(url);
   }
 
   function initMarquee(projects) {
@@ -140,7 +217,7 @@
     meta.appendChild(proj);
     card.appendChild(meta);
 
-    function open() { openFolder(project.folderUrl); }
+    function open() { openPanDialog(project); }
     card.addEventListener('click', open);
     card.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
