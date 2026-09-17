@@ -23,7 +23,10 @@
 
   function getProjectUrl(project, type) {
     if (!project) return '';
-    if (type === 'baidu') return project.baiduUrl || project.baiduPanUrl || '';
+    if (type === 'baidu') {
+      return project.baiduUrl || project.baiduPanUrl ||
+        (state.data && state.data.site && state.data.site.baiduUrl) || '';
+    }
     return project.quarkUrl || project.folderUrl || '';
   }
 

@@ -1,7 +1,8 @@
 {
   "site": {
     "title": "AIGC",
-    "subtitle": "视频展示 · 点击选择网盘查看"
+    "subtitle": "视频展示 · 点击选择网盘查看",
+    "baiduUrl": "https://pan.baidu.com/s/1sgRtgvwpH8g5WcwKgFvZTg?pwd=f9mj"
   },
   "projects": [
     {
