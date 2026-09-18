@@ -493,6 +493,11 @@ body.dialog-open { overflow: hidden; }
   animation: fadeIn 0.18s ease;
 }
 
+.collection-card .video-thumb::after,
+.collection-card .folder-icon {
+  display: none;
+}
+
 .pan-dialog-backdrop {
   position: absolute;
   inset: 0;

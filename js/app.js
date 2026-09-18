@@ -181,6 +181,7 @@
   function makeCard(project, pi) {
     var card = document.createElement('article');
     card.className = 'video-card';
+    if (project.id === 'zongheji') card.classList.add('collection-card');
     card.tabIndex = 0;
 
     var thumb = document.createElement('div');
