@@ -250,6 +250,15 @@
       "baiduUrl": "https://pan.baidu.com/s/1QnFIlc2Kqma9LQkroLhvIA?pwd=3v3x",
       "cover": "images/covers/微创意.jpg",
       "count": 4
+    },
+    {
+      "id": "tiktok",
+      "name": "Tiktok",
+      "videos": [],
+      "folderUrl": "https://pan.quark.cn/s/2f0c9ed7ff93",
+      "baiduUrl": "https://pan.baidu.com/s/1VNzd2itHFK0b8hlaJvuamw?pwd=yqie",
+      "cover": "images/covers/Tiktok.svg",
+      "count": 1
     }
   ]
 }
