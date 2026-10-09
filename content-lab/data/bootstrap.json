@@ -1,15 +1,15 @@
 {
   "summary": {
-    "video_count": 6,
-    "revision_count": 6,
-    "duration_total": 380.44,
+    "video_count": 9,
+    "revision_count": 9,
+    "duration_total": 558.12,
     "metric_count": 0,
-    "last_seen": "2026-09-30T11:02:09+08:00"
+    "last_seen": "2026-10-09T14:07:48+08:00"
   },
   "roles": [
     {
       "content_role": "产品教育",
-      "count": 3
+      "count": 4
     },
     {
       "content_role": "新品上市",
@@ -17,7 +17,7 @@
     },
     {
       "content_role": "成交内容",
-      "count": 1
+      "count": 3
     },
     {
       "content_role": "品牌内容",
@@ -26,12 +26,16 @@
   ],
   "evidence": [
     {
-      "evidence_strength": "弱",
+      "evidence_strength": "高",
       "count": 2
     },
     {
       "evidence_strength": "中",
-      "count": 4
+      "count": 5
+    },
+    {
+      "evidence_strength": "弱",
+      "count": 2
     }
   ],
   "patterns": [
@@ -66,7 +70,7 @@
       "updated_at": "2026-09-29T18:00:00+08:00"
     }
   ],
-  "total": 6,
+  "total": 9,
   "videos": [
     {
       "id": "VID-20260928-001",
@@ -295,8 +299,123 @@
       "revision_total": 1,
       "metric_snapshots": 0,
       "analysis_created_at": "2026-09-29T18:00:00+08:00"
+    },
+    {
+      "id": "VID-20260522-001",
+      "source_type": "自有",
+      "platform": "抖音",
+      "source_filename": "5月22日ai剪辑专享款1.mp4",
+      "source_url": null,
+      "file_hash": "EE7DDEDCFE66979443C0A3F52FF38609CC529C661D933F7B3DBAD93F5C1122DA",
+      "recorded_date": "2026-05-22",
+      "duration_seconds": 26.12,
+      "content_role": "成交内容",
+      "image_path": "./assets/0522.jpg",
+      "first_seen_at": "2026-10-09T14:07:48+08:00",
+      "video_id": "VID-20260522-001",
+      "version": 1,
+      "summary": "AI成片以平胸买内衣别将就制造身份冲突，用专属杯型、2.8厘米厚度、自然显圆与固定杯组成卖点链，最后以舒适、自信和运费险成交。",
+      "product": "平胸专享款内衣",
+      "audience": "纯平、小A或AAA杯、排骨胸，以及希望自然塑形但不想假大的女性。",
+      "hook_text": "平胸买内衣真的别将就。",
+      "hook_timecode": "00:00-00:03",
+      "first_frame": "蓝色背景中的产品主视觉，左侧明确标注包含AI生成内容。",
+      "proof": "杯面和边缘超近景展示外观；双手揉压折叠杯体，对应固定杯、不跑杯不移位的结构表达。",
+      "proof_timecode": "00:09-00:14",
+      "promised_result": "自然显圆润不假大、日常与约会均可、无钢圈不勒胸、久穿舒适并增强自信。",
+      "intended_action": "利用运费险降低试错顾虑并下单试穿。",
+      "facts": "视频时长26.12秒、1080×1920；画面标注包含AI生成内容；字幕依次出现纯平小A/AAA杯、排骨胸优化版型、2.8厘米、自然显圆润不假大、固定杯、不跑杯不移位、运费险放心试。",
+      "inference": "AI多场景负责结果想象，真实产品特写负责结构证明；全片没有价格、限时优惠或明确商品卡路径，成交主要靠身份收益与风险逆转。",
+      "confidence": "高",
+      "manual_checks": "语音转写后端不可用，依据硬字幕和关键帧；AI模特画面不能作为真人试穿或长期机洗证据。",
+      "evidence_strength": "中",
+      "tags_json": "[\"AI生成内容\",\"平胸专享款\",\"小A杯\",\"AAA杯\",\"排骨胸\",\"固定杯\",\"运费险\"]",
+      "transcript": null,
+      "compliance_risks": "AI模特穿着效果应与真实商品一致；机洗不变形、不跑杯不移位等表述需真实测试支撑；避免用AI画面替代真人功效证明。",
+      "created_at": "2026-10-09T06:08:49.799Z",
+      "title": "5月22日ai剪辑专享款1",
+      "revision_total": 1,
+      "metric_snapshots": 0,
+      "analysis_created_at": "2026-10-09T06:08:49.799Z"
+    },
+    {
+      "id": "VID-20260517-001",
+      "source_type": "自有",
+      "platform": "抖音",
+      "source_filename": "5月17日下午2点.mp4",
+      "source_url": null,
+      "file_hash": "27F4F4AEF6599093AF51F9C474602D2A05083BB62481CD8DA3DB1A7135949D34",
+      "recorded_date": "2026-05-17",
+      "duration_seconds": 63.09,
+      "content_role": "成交内容",
+      "image_path": "./assets/0517.jpg",
+      "first_seen_at": "2026-10-09T14:07:48+08:00",
+      "video_id": "VID-20260517-001",
+      "version": 1,
+      "summary": "直播切片先点名飞机场、小a杯人群，再用柔软不厚与弯腰抬手不跑杯不空杯完成证明，最后以169元、礼盒和直播商品卡成交。",
+      "product": "平胸轻运动内衣",
+      "audience": "平胸、小胸、排骨胸，以及日常动作中容易空杯、跑杯的人。",
+      "hook_text": "轻运动内衣专门按飞机场、小a杯设计。",
+      "hook_timecode": "00:00-00:08",
+      "first_frame": "主播手持完整内衣，杯体和侧翼同时可见。",
+      "proof": "捏压拉扯杯体展示柔软，现场弯腰、抬手并贴身比划，字幕同步强调不跑杯、不空杯。",
+      "proof_timecode": "00:00-00:42",
+      "promised_result": "柔软不厚，动作中稳定，并让平胸排骨胸穿出立挺饱满的身形感。",
+      "intended_action": "接受169元报价，参考尺码推荐并通过直播商品卡购买。",
+      "facts": "视频时长63.09秒、720×1280；00:06字幕点名飞机场小a杯；00:24弯腰动作配不跑杯；约00:42出现一件169；末段出现直播间、商品卡和S-XL尺码推荐。",
+      "inference": "这是证明后紧接报价的高转化直播切片，动作测试比单纯口播更能降低小胸用户对空杯跑杯的担忧。",
+      "confidence": "高",
+      "manual_checks": "语音转写后端不可用，依据硬字幕和画面动作；未独立验证不同体型与动作强度下的稳定性。",
+      "evidence_strength": "高",
+      "tags_json": "[\"平胸\",\"小a杯\",\"轻运动内衣\",\"不跑杯\",\"不空杯\",\"169元\",\"直播切片\"]",
+      "transcript": null,
+      "compliance_risks": "不跑杯、不空杯及立挺饱满属于效果表达，应避免无条件绝对化，并注明适配范围。",
+      "created_at": "2026-10-09T06:08:47.416Z",
+      "title": "5月17日下午2点",
+      "revision_total": 1,
+      "metric_snapshots": 0,
+      "analysis_created_at": "2026-10-09T06:08:47.416Z"
+    },
+    {
+      "id": "VID-20251228-001",
+      "source_type": "自有",
+      "platform": "抖音",
+      "source_filename": "12月28日.mp4",
+      "source_url": null,
+      "file_hash": "ACEA1F173057AD165109008B21447D5CB790D7D01A7A1B67AEBD048D2A83F806",
+      "recorded_date": "2025-12-28",
+      "duration_seconds": 88.47,
+      "content_role": "产品教育",
+      "image_path": "./assets/1228.jpg",
+      "first_seen_at": "2026-10-09T14:07:48+08:00",
+      "video_id": "VID-20251228-001",
+      "version": 1,
+      "summary": "通过小胸标准款与平胸标准款的选择冲突，按厚度、人群、功能三维完成产品判断，并把流量导向12月29日12:00直播。",
+      "product": "小胸标准款与平胸标准款内衣",
+      "audience": "不知道自己属于小胸还是平胸、担心买错杯型的女性；其中视频明确把小胸标准款指向A杯和小B杯人群。",
+      "hook_text": "两款外观接近的标准款到底有什么区别、应该怎么选。",
+      "hook_timecode": "00:00-00:12",
+      "first_frame": "主播同时举起两款肤色内衣，先让观众看到选择题。",
+      "proof": "杯垫厚度近景、MAO原创胸型对照图、收副乳功能图示以及两款实物比较。",
+      "proof_timecode": "00:12-01:08",
+      "promised_result": "按胸型和需求选对款，获得匹配的承托、收副乳与穿着效果。",
+      "intended_action": "记住选款规则，并于12月29日12:00进入直播间。",
+      "facts": "视频时长88.47秒、1080×1920；画面章节明确出现厚度区别、人群区别、功能区别；00:28胸型对照图标注A杯小B杯人群；结尾出现12/29 12:00。",
+      "inference": "核心策略是用选款教育降低购买决策成本，直播时间承担交易承接；视频本身未展示价格、库存或福利。",
+      "confidence": "高",
+      "manual_checks": "语音转写后端不可用，结论依据硬字幕和关键帧；产品功效需以真实商品测试为准。",
+      "evidence_strength": "高",
+      "tags_json": "[\"小胸标准款\",\"平胸标准款\",\"选款教育\",\"胸型对照\",\"直播预告\"]",
+      "transcript": null,
+      "compliance_risks": "胸型边界及收副乳等功效表达需有产品依据，避免把示意图表述为普遍保证。",
+      "created_at": "2026-10-09T06:08:44.996Z",
+      "title": "12月28日",
+      "revision_total": 1,
+      "metric_snapshots": 0,
+      "analysis_created_at": "2026-10-09T06:08:44.996Z"
     }
   ],
   "storageStatus": "static",
-  "generated_at": "2026-10-01T02:48:21.210Z"
+  "generated_at": "2026-10-09T06:11:50.721Z"
 }
+
