@@ -7,6 +7,7 @@
   <title>平胸内衣内容实验室</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23181718'/%3E%3Cpath d='M16 39c5-17 12-22 16-8 4-14 11-9 16 8' fill='none' stroke='%23ff7657' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='45' r='3' fill='%23f3e7d9'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./decision.css">
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -16,8 +17,12 @@
       <nav aria-label="主导航">
         <button class="nav-item active" data-view="overview"><span>总览</span><em>01</em></button>
         <button class="nav-item" data-view="videos"><span>视频数据库</span><em>02</em></button>
-        <button class="nav-item" data-view="dictionary"><span>字段说明</span><em>03</em></button>
-        <button class="nav-item" data-view="patterns"><span>规律实验</span><em>04</em></button>
+        <button class="nav-item" data-view="reuse"><span>可复用结构</span><em>03</em></button>
+        <button class="nav-item" data-view="variations"><span>裂变实验</span><em>04</em></button>
+        <button class="nav-item" data-view="outputs"><span>内容输出</span><em>05</em></button>
+        <button class="nav-item" data-view="metric-entry"><span>指标录入</span><em>06</em></button>
+        <button class="nav-item" data-view="dictionary"><span>字段说明</span><em>07</em></button>
+        <button class="nav-item" data-view="patterns"><span>规律实验</span><em>08</em></button>
       </nav>
       <div class="sidebar-note"><i></i><div><strong id="storageLabel">连接数据库中</strong><p>只追加，不覆盖历史</p></div></div>
     </aside>
@@ -44,6 +49,11 @@
           <article class="panel wide-panel"><div class="panel-head"><div><h3>最新内容理解</h3><p>先回答“这条视频到底在讲什么”，再进入策略判断。</p></div><button class="text-button" data-jump="videos">查看全部</button></div><div id="latestUnderstanding" class="latest-grid loading">正在读取…</div></article>
         </div>
       </section>
+
+      <section class="view" id="reuse"><div class="section-heading"><div><p class="eyebrow">目标一 · 判断能否复用</p><h2>可复用结构</h2><p>只在同内容角色、同数据窗口内比较；样本不足时只保留假设。</p></div><span class="pill">至少3条同类视频</span></div><div id="reuseGrid" class="decision-grid loading">正在计算…</div></section>
+      <section class="view" id="variations"><div class="section-heading"><div><p class="eyebrow">目标二 · 单变量裂变</p><h2>裂变实验</h2><p>每次只替换人群、钩子、产品判断、证明镜头或成交承接中的一个变量。</p></div><span class="pill">A/B各至少3条</span></div><div id="experimentGrid" class="experiment-grid loading">正在生成…</div><h3 class="subsection-title">待验证的裂变方向</h3><div id="variationGrid" class="decision-grid compact loading">正在生成…</div></section>
+      <section class="view" id="outputs"><div class="section-heading"><div><p class="eyebrow">目标三 · 形成下一批内容</p><h2>选题与脚本建议</h2><p>已验证规律才标记为推荐拍摄；单条证据只生成测试稿。</p></div><span class="pill">不把假设当结论</span></div><div id="outputGrid" class="output-grid loading">正在生成…</div></section>
+      <section class="view" id="metric-entry"><div class="section-heading"><div><p class="eyebrow">24小时初判 · 72小时复核 · 7天定论</p><h2>指标录入与批量校验</h2><p>公开网页不直接写入主库；在此整理并校验数据，导出后由本地主库追加入库。</p></div><span class="pill" id="draftCount">0条待导出</span></div><div class="metric-layout"><form id="metricForm" class="panel metric-form"><h3>单条补录</h3><label>视频<select name="video_id" id="metricVideo" required></select></label><div class="form-row"><label>数据窗口<select name="checkpoint"><option value="24h">24小时</option><option value="72h">72小时</option><option value="7d">7天</option></select></label><label>采集时间<input name="captured_at" type="datetime-local" required></label></div><div id="metricFields" class="metric-fields"></div><label>流量说明<textarea name="traffic_note" placeholder="自然流/投流、发布时间、优惠、主播变化等"></textarea></label><button class="primary" type="submit">加入待导出数据</button><p id="metricMessage" class="form-message"></p></form><article class="panel import-panel"><h3>Excel / CSV批量导入</h3><p>请先另存为CSV。模板必须包含视频ID、数据窗口和采集时间；合法行与错误行会分别显示。</p><input id="metricFile" type="file" accept=".csv,text/csv"><div id="importResult" class="import-result">尚未选择文件</div><div class="import-actions"><button id="downloadTemplate" class="text-button">下载CSV模板</button><button id="exportDrafts" class="primary">导出已校验数据</button></div></article></div></section>
 
       <section class="view" id="videos">
         <div class="section-heading"><div><p class="eyebrow">一条视频一条主记录</p><h2>视频数据库</h2><p>观察事实、AI推断和未知项分开保存；前3秒与证明画面带时间码。</p></div></div>
@@ -72,5 +82,6 @@
   <dialog id="guideDialog"><button class="dialog-close" id="closeGuide" aria-label="关闭">×</button><p class="eyebrow">以后这样更新</p><h2>你发视频，我理解后追加进数据库</h2><ol><li>在当前聊天上传原视频，并尽量附来源链接、发布时间和公开数据。</li><li>我先判断视频在讲什么，再拆解商品、人群、前3秒、证明画面和目标结果。</li><li>分析完成后写入新记录；复核或补充指标时新增版本与快照，不覆盖历史。</li><li>刷新本网站即可看到最新数据库。</li></ol><p class="notice">网站不直接公开上传入口，避免未经复核的数据进入唯一可信库。原视频文件本身不复制到数据库；这里长期保存结构化分析、来源标识与效果数据。</p></dialog>
   <div id="toast" class="toast" role="status"></div>
   <script src="./app.js"></script>
+  <script src="./decision-ui.js"></script>
 </body>
 </html>

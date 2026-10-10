@@ -70,6 +70,479 @@
       "updated_at": "2026-09-29T18:00:00+08:00"
     }
   ],
+  "decisions": {
+    "rules": {
+      "comparison": "同内容角色、同数据窗口使用中位数比较",
+      "threshold": "每个变体至少3条；24小时初判、72小时复核、7天定论",
+      "reusable": "至少2/3高于基准且核心指标中位提升≥10%"
+    },
+    "baselines": {
+      "成交内容|24h": {
+        "product_ctr": null,
+        "conversion_rate": null,
+        "orders": null,
+        "gmv": null
+      },
+      "成交内容|72h": {
+        "product_ctr": null,
+        "conversion_rate": null,
+        "orders": null,
+        "gmv": null
+      },
+      "成交内容|7d": {
+        "product_ctr": null,
+        "conversion_rate": null,
+        "orders": null,
+        "gmv": null
+      },
+      "产品教育|24h": {
+        "retention_3s": null,
+        "completion_rate": null,
+        "save_rate": null,
+        "product_ctr": null
+      },
+      "产品教育|72h": {
+        "retention_3s": null,
+        "completion_rate": null,
+        "save_rate": null,
+        "product_ctr": null
+      },
+      "产品教育|7d": {
+        "retention_3s": null,
+        "completion_rate": null,
+        "save_rate": null,
+        "product_ctr": null
+      },
+      "品牌内容|24h": {
+        "retention_3s": null,
+        "completion_rate": null,
+        "save_rate": null,
+        "share_rate": null,
+        "like_rate": null,
+        "comment_rate": null
+      },
+      "品牌内容|72h": {
+        "retention_3s": null,
+        "completion_rate": null,
+        "save_rate": null,
+        "share_rate": null,
+        "like_rate": null,
+        "comment_rate": null
+      },
+      "品牌内容|7d": {
+        "retention_3s": null,
+        "completion_rate": null,
+        "save_rate": null,
+        "share_rate": null,
+        "like_rate": null,
+        "comment_rate": null
+      },
+      "新品上市|24h": {
+        "retention_3s": null,
+        "completion_rate": null,
+        "product_ctr": null,
+        "orders": null
+      },
+      "新品上市|72h": {
+        "retention_3s": null,
+        "completion_rate": null,
+        "product_ctr": null,
+        "orders": null
+      },
+      "新品上市|7d": {
+        "retention_3s": null,
+        "completion_rate": null,
+        "product_ctr": null,
+        "orders": null
+      }
+    },
+    "reusable": [
+      {
+        "content_role": "产品教育",
+        "structure_signature": "选择冲突-三维判断-对比证明-直播承接",
+        "status": "数据不足",
+        "sample_count": 1,
+        "seven_day_count": 0,
+        "median_uplift": null,
+        "primary_metrics": [
+          "retention_3s",
+          "completion_rate",
+          "save_rate",
+          "product_ctr"
+        ],
+        "audience": "选款困难的小胸/平胸人群",
+        "chain": "选择题冲突 → 按厚度、人群与功能判断款式 → 双款实物对比＋胸型图示 → 降低买错风险",
+        "evidence": "待补数据",
+        "challenge": "结果是否由发布时间、流量来源、价格、主播表现或优惠力度造成，而不是结构本身？"
+      },
+      {
+        "content_role": "成交内容",
+        "structure_signature": "人群点名-动作痛点-现场测试-价格成交",
+        "status": "数据不足",
+        "sample_count": 1,
+        "seven_day_count": 0,
+        "median_uplift": null,
+        "primary_metrics": [
+          "product_ctr",
+          "conversion_rate",
+          "orders",
+          "gmv"
+        ],
+        "audience": "易空杯跑杯的小A/排骨胸人群",
+        "chain": "人群点名＋痛点 → 轻运动固定杯适配动作场景 → 揉压杯体＋弯腰抬手测试 → 动作稳定＋明确价格",
+        "evidence": "待补数据",
+        "challenge": "结果是否由发布时间、流量来源、价格、主播表现或优惠力度造成，而不是结构本身？"
+      },
+      {
+        "content_role": "成交内容",
+        "structure_signature": "身份冲突-专属判断-结构特写-风险逆转",
+        "status": "数据不足",
+        "sample_count": 1,
+        "seven_day_count": 0,
+        "median_uplift": null,
+        "primary_metrics": [
+          "product_ctr",
+          "conversion_rate",
+          "orders",
+          "gmv"
+        ],
+        "audience": "想自然塑形的纯平/AAA/排骨胸人群",
+        "chain": "身份冲突 → 专属杯型＋固定杯降低错配 → 产品微距＋揉折结构 → 自然轮廓＋运费险降风险",
+        "evidence": "待补数据",
+        "challenge": "结果是否由发布时间、流量来源、价格、主播表现或优惠力度造成，而不是结构本身？"
+      },
+      {
+        "content_role": "品牌内容",
+        "structure_signature": "品牌宣言-情绪认同-静物审美-记忆承接",
+        "status": "数据不足",
+        "sample_count": 1,
+        "seven_day_count": 0,
+        "median_uplift": null,
+        "primary_metrics": [
+          "retention_3s",
+          "completion_rate",
+          "save_rate",
+          "share_rate",
+          "like_rate",
+          "comment_rate"
+        ],
+        "audience": "寻找品牌认同的平胸女性",
+        "chain": "品牌宣言 → 品牌为平胸而生 → 固定产品静物 → 身份认同",
+        "evidence": "待补数据",
+        "challenge": "结果是否由发布时间、流量来源、价格、主播表现或优惠力度造成，而不是结构本身？"
+      },
+      {
+        "content_role": "产品教育",
+        "structure_signature": "新品声明-设计解释-手稿证明-关注承接",
+        "status": "数据不足",
+        "sample_count": 1,
+        "seven_day_count": 0,
+        "median_uplift": null,
+        "primary_metrics": [
+          "retention_3s",
+          "completion_rate",
+          "save_rate",
+          "product_ctr"
+        ],
+        "audience": "关注自然聚拢与无痕的平胸小A人群",
+        "chain": "新品标题卡 → 结构设计回应贴合与无痕 → 设计手稿＋结构标注 → 设计可信度",
+        "evidence": "待补数据",
+        "challenge": "结果是否由发布时间、流量来源、价格、主播表现或优惠力度造成，而不是结构本身？"
+      },
+      {
+        "content_role": "产品教育",
+        "structure_signature": "反常识-两难判断-结构近景-开售预热",
+        "status": "数据不足",
+        "sample_count": 1,
+        "seven_day_count": 0,
+        "median_uplift": null,
+        "primary_metrics": [
+          "retention_3s",
+          "completion_rate",
+          "save_rate",
+          "product_ctr"
+        ],
+        "audience": "想轻薄又不愿牺牲承托的人群",
+        "chain": "反常识命题 → 二代结构兼顾轻薄透气与承托 → 面料微距＋按压＋穿着拼贴 → 解决两难需求",
+        "evidence": "待补数据",
+        "challenge": "结果是否由发布时间、流量来源、价格、主播表现或优惠力度造成，而不是结构本身？"
+      },
+      {
+        "content_role": "成交内容",
+        "structure_signature": "需求两难-可调结构-厚度证明-价格成交",
+        "status": "数据不足",
+        "sample_count": 1,
+        "seven_day_count": 0,
+        "median_uplift": null,
+        "primary_metrics": [
+          "product_ctr",
+          "conversion_rate",
+          "orders",
+          "gmv"
+        ],
+        "audience": "想薄又想有自然轮廓的小平胸人群",
+        "chain": "新品开售字幕 → 单穿/叠穿厚度可调 → 杯垫结构＋厚度字幕＋轮廓示意 → 可调结构＋价格",
+        "evidence": "待补数据",
+        "challenge": "结果是否由发布时间、流量来源、价格、主播表现或优惠力度造成，而不是结构本身？"
+      },
+      {
+        "content_role": "新品上市",
+        "structure_signature": "新品宣布-用户问题-研发证据-预售承接",
+        "status": "数据不足",
+        "sample_count": 1,
+        "seven_day_count": 0,
+        "median_uplift": null,
+        "primary_metrics": [
+          "retention_3s",
+          "completion_rate",
+          "product_ctr",
+          "orders"
+        ],
+        "audience": "首代用户与担心贴合问题的观望者",
+        "chain": "新品正式开售 → 用用户反馈推动产品迭代 → 订单评论＋研发生产交付过程 → 社会证明＋研发可信度",
+        "evidence": "待补数据",
+        "challenge": "结果是否由发布时间、流量来源、价格、主播表现或优惠力度造成，而不是结构本身？"
+      },
+      {
+        "content_role": "产品教育",
+        "structure_signature": "经验背书-结构判断-揉压特写-商品承接",
+        "status": "数据不足",
+        "sample_count": 1,
+        "seven_day_count": 0,
+        "median_uplift": null,
+        "primary_metrics": [
+          "retention_3s",
+          "completion_rate",
+          "save_rate",
+          "product_ctr"
+        ],
+        "audience": "关注柔软透气与自然塑形的小胸人群",
+        "chain": "主播经验背书 → 软弹等厚杯垫适合日常 → 杯垫分离揉压＋透气孔特写 → 舒适透气的日常选择",
+        "evidence": "待补数据",
+        "challenge": "结果是否由发布时间、流量来源、价格、主播表现或优惠力度造成，而不是结构本身？"
+      }
+    ],
+    "variations": [
+      {
+        "video_id": "VID-20251228-001",
+        "title": "12月28日.mp4",
+        "content_role": "产品教育",
+        "status": "实验方向",
+        "keep": "保留选款困难的小胸/平胸人群、按厚度、人群与功能判断款式与双款实物对比＋胸型图示",
+        "change": "只替换选择题冲突或直播预约中的一个变量",
+        "reason": "当前缺少至少3条跨产品或场景的同向数据，不能标记为可裂变。",
+        "primary_metric": "retention_3s",
+        "challenge": "语音转写后端不可用，结论依据硬字幕和关键帧；产品功效需以真实商品测试为准。"
+      },
+      {
+        "video_id": "VID-20260517-001",
+        "title": "5月17日下午2点.mp4",
+        "content_role": "成交内容",
+        "status": "实验方向",
+        "keep": "保留易空杯跑杯的小A/排骨胸人群、轻运动固定杯适配动作场景与揉压杯体＋弯腰抬手测试",
+        "change": "只替换人群点名＋痛点或商品卡下单中的一个变量",
+        "reason": "当前缺少至少3条跨产品或场景的同向数据，不能标记为可裂变。",
+        "primary_metric": "product_ctr",
+        "challenge": "语音转写后端不可用，依据硬字幕和画面动作；未独立验证不同体型与动作强度下的稳定性。"
+      },
+      {
+        "video_id": "VID-20260522-001",
+        "title": "5月22日ai剪辑专享款1.mp4",
+        "content_role": "成交内容",
+        "status": "实验方向",
+        "keep": "保留想自然塑形的纯平/AAA/排骨胸人群、专属杯型＋固定杯降低错配与产品微距＋揉折结构",
+        "change": "只替换身份冲突或放心试穿中的一个变量",
+        "reason": "当前缺少至少3条跨产品或场景的同向数据，不能标记为可裂变。",
+        "primary_metric": "product_ctr",
+        "challenge": "语音转写后端不可用，依据硬字幕和关键帧；AI模特画面不能作为真人试穿或长期机洗证据。"
+      },
+      {
+        "video_id": "VID-20260918-001",
+        "title": "9月18日晚上主号.mp4",
+        "content_role": "品牌内容",
+        "status": "实验方向",
+        "keep": "保留寻找品牌认同的平胸女性、品牌为平胸而生与固定产品静物",
+        "change": "只替换品牌宣言或品牌记忆中的一个变量",
+        "reason": "当前缺少至少3条跨产品或场景的同向数据，不能标记为可裂变。",
+        "primary_metric": "retention_3s",
+        "challenge": "确认完整口播、SKU、内容目标以及后台表现。"
+      },
+      {
+        "video_id": "VID-20260921-001",
+        "title": "9月21日晚上主号.mp4",
+        "content_role": "产品教育",
+        "status": "实验方向",
+        "keep": "保留关注自然聚拢与无痕的平胸小A人群、结构设计回应贴合与无痕与设计手稿＋结构标注",
+        "change": "只替换新品标题卡或关注开售中的一个变量",
+        "reason": "当前缺少至少3条跨产品或场景的同向数据，不能标记为可裂变。",
+        "primary_metric": "retention_3s",
+        "challenge": "确认Latex、AirGrip、八孔/蜂窝透气结构等材料与工艺名称，核对成品是否与手稿一致，并补充试穿、检测、SKU、价格、CTA和后台指标。"
+      },
+      {
+        "video_id": "VID-20260922-001",
+        "title": "9月22日主号.mp4",
+        "content_role": "产品教育",
+        "status": "实验方向",
+        "keep": "保留想轻薄又不愿牺牲承托的人群、二代结构兼顾轻薄透气与承托与面料微距＋按压＋穿着拼贴",
+        "change": "只替换反常识命题或等待开售中的一个变量",
+        "reason": "当前缺少至少3条跨产品或场景的同向数据，不能标记为可裂变。",
+        "primary_metric": "retention_3s",
+        "challenge": "确认轻30%、薄60%和透气的检测依据、用户素材授权及后台数据。"
+      },
+      {
+        "video_id": "VID-20260923-001",
+        "title": "9月23日下午3点挂车.mp4",
+        "content_role": "成交内容",
+        "status": "实验方向",
+        "keep": "保留想薄又想有自然轮廓的小平胸人群、单穿/叠穿厚度可调与杯垫结构＋厚度字幕＋轮廓示意",
+        "change": "只替换新品开售字幕或商品卡下单中的一个变量",
+        "reason": "当前缺少至少3条跨产品或场景的同向数据，不能标记为可裂变。",
+        "primary_metric": "product_ctr",
+        "challenge": "确认SKU、活动价格关系、厚度测量依据，以及真实留存、点击与成交数据。"
+      },
+      {
+        "video_id": "VID-20260924-001",
+        "title": "9月24日主号.mp4",
+        "content_role": "新品上市",
+        "status": "实验方向",
+        "keep": "保留首代用户与担心贴合问题的观望者、用用户反馈推动产品迭代与订单评论＋研发生产交付过程",
+        "change": "只替换新品正式开售或下单或预售中的一个变量",
+        "reason": "当前缺少至少3条跨产品或场景的同向数据，不能标记为可裂变。",
+        "primary_metric": "retention_3s",
+        "challenge": "确认海报中2000/3000数字的确切含义、开售与预售状态、二代具体改进清单、工厂身份、评论授权真实性、商品页与发布后后台数据。"
+      },
+      {
+        "video_id": "VID-20260928-001",
+        "title": "928平标3.mp4",
+        "content_role": "产品教育",
+        "status": "实验方向",
+        "keep": "保留关注柔软透气与自然塑形的小胸人群、软弹等厚杯垫适合日常与杯垫分离揉压＋透气孔特写",
+        "change": "只替换主播经验背书或商品链接了解中的一个变量",
+        "reason": "当前缺少至少3条跨产品或场景的同向数据，不能标记为可裂变。",
+        "primary_metric": "retention_3s",
+        "challenge": "确认SKU、价格、片中“2.8中杯”等字幕的准确含义、大牌相关表述依据、透气与材质检测、最终CTA和发布后指标。"
+      }
+    ],
+    "outputs": [
+      {
+        "id": "OUT-1",
+        "status": "测试稿",
+        "title": "易空杯跑杯的小A/排骨胸人群：想柔软轻薄又怕动作不稳定",
+        "content_role": "成交内容",
+        "audience": "平胸、小胸、排骨胸，以及日常动作中容易空杯、跑杯的人。",
+        "opening": "轻运动内衣专门按飞机场、小a杯设计。",
+        "product_judgment": "轻运动固定杯适配动作场景",
+        "proof": "捏压拉扯杯体展示柔软，现场弯腰、抬手并贴身比划，字幕同步强调不跑杯、不空杯。",
+        "conversion": "接受169元报价，参考尺码推荐并通过直播商品卡购买。",
+        "basis": "来源：5月17日下午2点.mp4；画面证据高；运营指标尚未回填",
+        "confidence": "待验证",
+        "challenge": "单条内容证据不能证明该结构能稳定提升结果。"
+      },
+      {
+        "id": "OUT-2",
+        "status": "测试稿",
+        "title": "选款困难的小胸/平胸人群：外观相似但适用胸型不同",
+        "content_role": "产品教育",
+        "audience": "不知道自己属于小胸还是平胸、担心买错杯型的女性；其中视频明确把小胸标准款指向A杯和小B杯人群。",
+        "opening": "两款外观接近的标准款到底有什么区别、应该怎么选。",
+        "product_judgment": "按厚度、人群与功能判断款式",
+        "proof": "杯垫厚度近景、MAO原创胸型对照图、收副乳功能图示以及两款实物比较。",
+        "conversion": "记住选款规则，并于12月29日12:00进入直播间。",
+        "basis": "来源：12月28日.mp4；画面证据高；运营指标尚未回填",
+        "confidence": "待验证",
+        "challenge": "单条内容证据不能证明该结构能稳定提升结果。"
+      },
+      {
+        "id": "OUT-3",
+        "status": "测试稿",
+        "title": "关注柔软透气与自然塑形的小胸人群：标准款是否真的柔软透气",
+        "content_role": "产品教育",
+        "audience": "小胸、平胸或小杯人群，关注轻薄、舒适、透气与自然塑形。",
+        "opening": "“这个标准款是我 / 整个内衣生涯当中……”",
+        "product_judgment": "软弹等厚杯垫适合日常",
+        "proof": "手动分离、抓揉与按压杯垫，展示上下厚度与回弹；随后近距离展示杯垫的大面积透气孔。",
+        "conversion": "进入1号链接或商品详情了解、购买（基于片中“1号链接”推断，需确认）。",
+        "basis": "来源：928平标3.mp4；画面证据中；运营指标尚未回填",
+        "confidence": "待验证",
+        "challenge": "单条内容证据不能证明该结构能稳定提升结果。"
+      },
+      {
+        "id": "OUT-4",
+        "status": "测试稿",
+        "title": "首代用户与担心贴合问题的观望者：首代问题是否被二代解决",
+        "content_role": "新品上市",
+        "audience": "平胸女性，尤其是首代购买者、观望者，以及担心空杯、贴合或穿着体验的人群。",
+        "opening": "“今天 2026年时…… / 二代全新……”",
+        "product_judgment": "用用户反馈推动产品迭代",
+        "proof": "销售战报、历史订单与直播评论画面，叠加设计会议、样品调整、纸样裁剪、工厂生产和打包发货素材。",
+        "conversion": "下单或进入预售，并以商品页面显示的库存、发货与价格信息为准。",
+        "basis": "来源：9月24日主号.mp4；画面证据中；运营指标尚未回填",
+        "confidence": "待验证",
+        "challenge": "单条内容证据不能证明该结构能稳定提升结果。"
+      },
+      {
+        "id": "OUT-5",
+        "status": "测试稿",
+        "title": "想薄又想有自然轮廓的小平胸人群：轻薄与轮廓感难兼得",
+        "content_role": "成交内容",
+        "audience": "想穿得薄，同时希望外搭有自然轮廓的平胸或小平胸女性。",
+        "opening": "“稍等一下”“哎呀OK OK”；顶部文字为“全新叠叠杯二代 今天开售”。",
+        "product_judgment": "单穿/叠穿厚度可调",
+        "proof": "展示整件内衣、单/双杯垫结构、厚度字幕、身前轮廓示意、商品卡和直播评论。",
+        "conversion": "点击2号链接或商品卡下单。",
+        "basis": "来源：9月23日下午3点挂车.mp4；画面证据中；运营指标尚未回填",
+        "confidence": "待验证",
+        "challenge": "单条内容证据不能证明该结构能稳定提升结果。"
+      }
+    ],
+    "experiments": [
+      {
+        "id": "EXP-001",
+        "title": "选择题冲突是否优于新品公告",
+        "content_role": "产品教育",
+        "hypothesis": "以买错风险开场比直接宣布新品更能提升3秒留存。",
+        "challenge": "提升可能来自更具体的目标人群，而非选择题本身。",
+        "control_design": "A版保留新品公告式开头，其余产品、主播、时长和发布时间尽量一致。",
+        "variant_design": "B版只替换为两款怎么选的选择题冲突。",
+        "primary_metric": "retention_3s",
+        "guardrail_metrics": "completion_rate,product_ctr",
+        "status": "待验证",
+        "required_per_variant": 3,
+        "created_at": "2026-10-10T00:00:00+08:00",
+        "updated_at": "2026-10-10T00:00:00+08:00"
+      },
+      {
+        "id": "EXP-002",
+        "title": "动作测试是否提升商品点击",
+        "content_role": "成交内容",
+        "hypothesis": "弯腰抬手等动作测试比纯结构特写更能降低空杯跑杯顾虑并提升商品点击。",
+        "challenge": "主播表现、价格与优惠可能共同影响点击。",
+        "control_design": "A版仅展示杯体结构和口播承诺。",
+        "variant_design": "B版只增加弯腰、抬手动作测试，其他变量保持一致。",
+        "primary_metric": "product_ctr",
+        "guardrail_metrics": "retention_3s,conversion_rate,refunds",
+        "status": "待验证",
+        "required_per_variant": 3,
+        "created_at": "2026-10-10T00:00:00+08:00",
+        "updated_at": "2026-10-10T00:00:00+08:00"
+      },
+      {
+        "id": "EXP-003",
+        "title": "运费险风险逆转是否提升转化",
+        "content_role": "成交内容",
+        "hypothesis": "明确运费险与试穿保障能提升犹豫人群的成交转化。",
+        "challenge": "转化变化可能由价格、库存或投流人群差异造成。",
+        "control_design": "A版使用相同结构和证明镜头，不强调运费险。",
+        "variant_design": "B版只在结尾增加运费险放心试的风险逆转。",
+        "primary_metric": "conversion_rate",
+        "guardrail_metrics": "product_ctr,refunds,negative_feedback",
+        "status": "待验证",
+        "required_per_variant": 3,
+        "created_at": "2026-10-10T00:00:00+08:00",
+        "updated_at": "2026-10-10T00:00:00+08:00"
+      }
+    ]
+  },
   "total": 9,
   "videos": [
     {
@@ -416,6 +889,5 @@
     }
   ],
   "storageStatus": "static",
-  "generated_at": "2026-10-09T06:11:50.721Z"
+  "generated_at": "2026-10-10T06:52:36.799Z"
 }
-
